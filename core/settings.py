@@ -38,15 +38,33 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-PROJECT_APPS = []
+PROJECT_APPS = [
+    'genes',
+]
 
 THIRD_PARTY_APPS = [
     'corsheaders',
     'rest_framework',
     'django_ckeditor_5',
+    'django_celery_beat'
     # 'ckeditor_uploader'
 ]
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
+
+# CELERY
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
+
+
+CELERY_BEAT_SCHEDULE = {
+    'poblar-variantes-cada-dia': {
+        'task': 'genes.tasks.tarea_poblar_variantes',
+        'schedule': 1800,  # Cada 24 horas (86400 segundos)
+    },
+}
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'

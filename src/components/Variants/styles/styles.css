@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .full-width {
+    flex: 3; /* O ajusta según tus necesidades */
+  }
+  
+  .sequence {
+    font-family: monospace;
+    padding: 10px;
+    background-color: #f0f0f0;
+    text-align: center;
+    overflow-x: auto;
+  }
+  
+  .viewer {
+    width: 100%;
+    height: 400px;
+  }
+
+  .protein-viewer-container {
+    display: flex;
+    grid: "grid grid-cols-6 h-screen";
+    color: "col-span-1 p-4 bg-gray-100 dark:bg-gray-100";
+    height: 100vh; /* Para ocupar toda la altura de la ventana */
+    width: 100%;
+  }
+  
+  .parameters-column {
+    flex: 1; /* Ocupa 1/6 del espacio */
+    display: flex;
+    grid: "col-span-1 p-4 bg-gray-100 dark:bg-gray-800";
+    padding: 10px;
+  }
+  
+  .viewer-column {
+    flex: 2.5; /* Ocupa 2.5/6 del espacio cada uno */
+    /* grid: "col-span-2 p-4"; */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sequence-container {
+    /* padding: 10px; */
+    font-size: 8px;
+    background-color: #f0f0f0; /* Fondo para la secuencia */
+    white-space: normal; /* Permite que las líneas se ajusten */
+    word-break: break-all; /* Rompe las palabras largas si es necesario */
+    overflow-wrap: break-word; /* Asegura el wrap en todas las palabras */
+    max-width: 100%; /* Limita el ancho máximo al 100% del contenedor padre */
+}
+
+  .ngl-viewer {
+    flex: 1;
+    /* display: flex; */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    height: 100%;
+    width: 100%
+  }
