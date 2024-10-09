@@ -160,8 +160,8 @@ function Master() {
         {openTab === 4 && <VClinvarInfo variantId={selectedVariant}/>}
         {/* {openTab === 5 && <ProteinSequence uniprotId= {'P38398'}/> }  */}
         {/* {openTab === 5 && <ProteinViewer pdbIdCanonical='5ly8'/>} */}
-        {/* {openTab === 5 && <ProteinViewerNuevo2 proteinCode='5ly8'/>} */}
-        {openTab === 5 && <ProteinViewerMolstar pdbId={'5ly8'}/>}
+        {openTab === 5 && <ProteinViewerNuevo2 proteinCode='5ly8'/>}
+        {/* {openTab === 5 && <ProteinViewerMolstar pdbId={'5ly8'}/>} */}
         {/* {openTab === 5 && <ProteinViewerNuevo3 pdbId="1crn" width="800px" height="600px"/>} */}
         {/* {openTab === 5 && <ProteinViewer pdbIdCanonical="1T2U" />} */}
         {/* {openTab === 5 && <MolecularViewer pdbId="1A2B"/>} */}
