@@ -10,8 +10,6 @@ export default function Variants() {
     <>
       <MasterHeader
         page={"Variantes genéticas"}
-        description={'Gene and Variant Information'}
-        // description={"Variantes encontradas en pacientes de Salud Pública"}
         menu={"Variantes"}
       />
       <Master/>

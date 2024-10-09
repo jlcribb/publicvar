@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom/client";
 import ProteinSequenceViewer from "./ProteinSequenceViewer"; // Importar tu componente
 import { Stage } from "ngl";
 import axios from "axios";
@@ -21,28 +21,41 @@ const ProteinViewer = ({ pdbIdCanonical, pdbIdAlternative }) => {
     stage1.current = new Stage("viewer1");
     stage1.current.loadFile(`rcsb://${pdbIdCanonical}`).then((component1) => {
       component1.addRepresentation("cartoon");
-      const sequenceCanonical = component1.structure.getSequence().join('');
-      setCanonicalSequence(sequenceCanonical)
-      console.log("Secuencia de la proteína canónica:", sequenceCanonical);
+      const sequenceCanonical = component1.structure.getSequence().join("");
+      setCanonicalSequence(sequenceCanonical);
+      // console.log("Secuencia de la proteína canónica:", sequenceCanonical);
 
       component1.autoView();
       component1Ref.current = component1;
     });
 
     // Cargar la segunda proteína
-    stage2.current = new Stage("viewer2");
-    stage2.current.loadFile(`rcsb://${pdbIdAlternative}`).then((component2) => {
-      component2.addRepresentation("cartoon");
+    if (pdbIdAlternative) {
+      stage2.current = new Stage("viewer2");
+      stage2.current
+        .loadFile(`rcsb://${pdbIdAlternative}`)
+        .then((component2) => {
+          component2.addRepresentation("cartoon");
 
-      const sequenceAlternative = component2.structure.getSequence().join('');
-      setAlternativeSequence(sequenceAlternative)
-      console.log("Secuencia de la proteína canónica:", sequenceAlternative);
-      component2.autoView();
-      component2Ref.current = component2;
-    });
+          const sequenceAlternative = component2.structure
+            .getSequence()
+            .join("");
+          setAlternativeSequence(sequenceAlternative);
+          console.log(
+            "Secuencia de la proteína canónica:",
+            sequenceAlternative
+          );
+          component2.autoView();
+          component2Ref.current = component2;
+        });
+    }
   }, [pdbIdCanonical, pdbIdAlternative]);
 
-  const handleHoverSequence = (residueIndex, componentRef, setHighlightedAA) => {
+  const handleHoverSequence = (
+    residueIndex,
+    componentRef,
+    setHighlightedAA
+  ) => {
     const component = componentRef.current;
 
     if (component) {
@@ -64,7 +77,7 @@ const ProteinViewer = ({ pdbIdCanonical, pdbIdAlternative }) => {
           sele: sele, // Selecciona el residuo por índice
           color: "red",
         });
-        
+
         // Centrar la vista en el residuo resaltado
         // component.autoView(`${residueIndex}`);
 
@@ -88,7 +101,8 @@ const ProteinViewer = ({ pdbIdCanonical, pdbIdAlternative }) => {
             <span
               key={index}
               style={{
-                backgroundColor: highlightedAA1 === index + 1 ? "green" : "transparent",
+                backgroundColor:
+                  highlightedAA1 === index + 1 ? "green" : "transparent",
               }}
               onMouseEnter={() =>
                 handleHoverSequence(index + 1, component1Ref, setHighlightedAA1)
@@ -100,14 +114,15 @@ const ProteinViewer = ({ pdbIdCanonical, pdbIdAlternative }) => {
         </div>
         <div id="viewer1" style={{ width: "100%", height: "500px" }} />
       </div>
-
-      <div style={{ flex: 1 }}>
-        <div className="sequence-container">
+          
+      {/* <div style={{ flex: 1 }}>
+        <div className="sequence-container 2">
           {alternativeSequence.split("").map((residue, index) => (
             <span
               key={index}
               style={{
-                backgroundColor: highlightedAA2 === index + 1 ? "yellow" : "transparent",
+                backgroundColor:
+                  highlightedAA2 === index + 1 ? "yellow" : "transparent",
               }}
               onMouseEnter={() =>
                 handleHoverSequence(index + 1, component2Ref, setHighlightedAA2)
@@ -118,10 +133,10 @@ const ProteinViewer = ({ pdbIdCanonical, pdbIdAlternative }) => {
           ))}
         </div>
         <div id="viewer2" style={{ width: "100%", height: "500px" }} />
-      </div>
+      </div> */}
     </div>
   );
-}
+};
 export default ProteinViewer;
 
 // const [canonicalSequence, setCanonicalSequence] = useState("");

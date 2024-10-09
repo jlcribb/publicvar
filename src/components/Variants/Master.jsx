@@ -19,6 +19,9 @@ import ProteinViewer from './ProteinViewer';
 import MolecularViewer from './MolecularView';
 import PublicationsCopy from './PublicationsCopy';
 import ProteinViewerNuevo from './ProteinViewerNuevo';
+import ProteinViewerNuevo2 from './ProteinViewerNuevo2';
+import ProteinViewerNuevo3 from './ProteinViewerNuevo3';
+import ProteinViewerMolstar from './ProteinViewerMolstar';
 
 const genes = ['BRCA1', 'BRCA2', 'TP53']; // Lista acotada de genes
 const container = document.getElementById('root');
@@ -156,8 +159,11 @@ function Master() {
         {openTab === 3 && <Publications geneName={selectedGene} tab={3}/>}
         {openTab === 4 && <VClinvarInfo variantId={selectedVariant}/>}
         {/* {openTab === 5 && <ProteinSequence uniprotId= {'P38398'}/> }  */}
-        {/* {openTab === 5 && <ProteinViewer pdbId='5ly8'/>} */}
-        {openTab === 5 && <ProteinViewer pdbIdCanonical="1T2V" pdbIdAlternative='1T2U'/>}
+        {/* {openTab === 5 && <ProteinViewer pdbIdCanonical='5ly8'/>} */}
+        {/* {openTab === 5 && <ProteinViewerNuevo2 proteinCode='5ly8'/>} */}
+        {openTab === 5 && <ProteinViewerMolstar pdbId={'5ly8'}/>}
+        {/* {openTab === 5 && <ProteinViewerNuevo3 pdbId="1crn" width="800px" height="600px"/>} */}
+        {/* {openTab === 5 && <ProteinViewer pdbIdCanonical="1T2U" />} */}
         {/* {openTab === 5 && <MolecularViewer pdbId="1A2B"/>} */}
         
         {/* {openTab === 5 && root.render(

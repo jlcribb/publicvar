@@ -63,6 +63,20 @@
     max-width: 100%; /* Limita el ancho máximo al 100% del contenedor padre */
 }
 
+  .sequence-container2 {
+    font-size: 8px;
+    background-color: #f0f0f0;
+    white-space: normal; /* Permite que las líneas se ajusten correctamente */
+    word-break: break-all; /* Rompe las palabras largas si es necesario */
+    overflow-wrap: break-word; /* Asegura el wrap en todas las palabras */
+    max-width: 100%; /* Limita el ancho máximo al 100% del contenedor padre */
+    /* padding: 10px; */
+    line-height: 2.5; /* Ajusta el espaciado entre renglones */
+  }
+  .sequence-container2 span {
+    margin-right: 2px;
+    padding: 2px;
+  }
   .ngl-viewer {
     flex: 1;
     /* display: flex; */

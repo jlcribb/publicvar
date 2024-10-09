@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import logo from "assets/img/logo.svg";
+import logo from "assets/img/Logo ADN 2.png";
 import loadingGif from "assets/img/load-35_256.gif";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";

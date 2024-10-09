@@ -24,8 +24,8 @@ function Home() {
           {/* <Incentives/> */}
           <ContextNews/>
           <Features/>
-          <CTA/>
-          <LogoCloud/>
+          {/* <CTA/> */}
+          {/* <LogoCloud/> */}
           <BlogList/>
         </div>
 

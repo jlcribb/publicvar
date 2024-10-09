@@ -3,18 +3,18 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 const features = [
   {
     name: 'Contacto con investigadores',
-    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+    description: 'Póngase en contacto con los investigadores que aportan en nuestra plataforma',
   },
-  { name: 'Lista de variantes', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
+  { name: 'Lista de variantes', description: 'Acceda a información de variantes presentes en pacientes notificados en nuestra plataforma' },
   {
     name: 'Búsquedas simplificadas',
-    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+    description: 'Puede localizar características de interés de manera rápida y fácil',
   },
-  { name: 'Calendario de eventos', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
-  { name: 'Notificaciones', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Contacto con los desarrolladores', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Reportes exitosos', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Pruebe nuestra App', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
+  { name: 'Calendario de eventos', description: 'El calendario de actividades de interés de distintos orígenes en un sólo lugar' },
+  { name: 'Notificaciones', description: 'Puede suscribirse a nuestro servicio de notificación de manera gratuita' },
+  { name: 'Contacto con los desarrolladores', description: 'Los desarrolladores se encuentran a disposición para requerimientos y evaluación de factibilidad' },
+  { name: 'Reportes exitosos', description: 'Contar con ésta poderosa herramienta, nos ha prmitido dar respuesta bioinformática precisa y en poco tiempo' },
+  { name: 'Pruebe nuestra App', description: 'Suscríbase de manera gratuita para investigar y sea parte de un grupo colaborativo interdisciplinario' },
 ]
 
 export default function Features() {
@@ -25,7 +25,7 @@ export default function Features() {
           <h2 className="text-lg font-semibold text-indigo-600">Todo lo que usted necesita</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900">En una sola plataforma</p>
           <p className="mt-4 text-lg text-gray-500">
-            Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.
+            Estamos para colaborar con usted
           </p>
         </div>
         <div className="mt-12 lg:col-span-2 lg:mt-0">
